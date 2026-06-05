@@ -5,20 +5,36 @@ sourceOfTruth:
   type: git
   url: https://specs.niceos.ru/niceos-containers/app-git
   branch: main
-  tag: v2.54.0-niceos13-r1
-  commit: 20bb3a3149ac883a34e84ee1e39c54ee8f62fc88
+  tag: 
+  buildSourceCommit: f4bca9e3c605803bfef5ca85ecc4a282c8ae33b2
+  metadataCommit: 03ee75bd9fd4a5fedc122391d587c3cc31612c24
 publicMonorepo:
   type: git
   url: https://github.com/niceos-containers/containers
   path: apps/git
-image:
-  registry: docker.io
-  namespace: niceos
-  repository: git
-  tags:
-    - 2.54.0-niceos13-r1
-    - 2.54.0
-    - latest
+images:
+  dockerHub:
+    registry: docker.io
+    namespace: niceos
+    repository: git
+    image: docker.io/niceos/git
+    tags:
+      - 2.54.0-niceos13-r1
+      - "2.54.0"
+      - latest
+    digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+    signed: true
+  ghcr:
+    registry: ghcr.io
+    namespace: niceos-containers
+    repository: git
+    image: ghcr.io/niceos-containers/git
+    tags:
+      - 2.54.0-niceos13-r1
+      - "2.54.0"
+      - latest
+    digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+    signed: true
 runtime:
   niceosContainer: "13"
   git: "2.54.0"
@@ -26,3 +42,7 @@ runtime:
 compatibility:
   mode: bitnami-compatible-migration-target
   reference: bitnami/git/2/debian-12
+sync:
+  mode: update
+  generatedBy: niceos_app_git_release_v2.py
+  generatedAt: 2026-06-05T13:32:29Z

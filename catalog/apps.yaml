@@ -1,14 +1,31 @@
 schemaVersion: 1
+generatedAt: 2026-06-05T13:32:29Z
 apps:
   - name: git
+    displayName: NiceOS Git
     path: apps/git
     status: published
-    image: docker.io/niceos/git
-    digest: docker.io/niceos/git@sha256:6ea720213d919d5a1a478906fc3285acd39f25621d00c2f75c556b2895e1290b
-    tags:
-      immutable: 2.54.0-niceos13-r1
-      version: 2.54.0
-      channel: latest
+    category: developer-tools
+    versions:
+      app: "2.54.0"
+      niceosStream: "13"
+      imageRevision: 1
+      immutableTag: 2.54.0-niceos13-r1
+    images:
+      dockerHub:
+        repository: docker.io/niceos/git
+        immutableTag: 2.54.0-niceos13-r1
+        versionTag: "2.54.0"
+        channelTag: latest
+        digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+        signed: true
+      ghcr:
+        repository: ghcr.io/niceos-containers/git
+        immutableTag: 2.54.0-niceos13-r1
+        versionTag: "2.54.0"
+        channelTag: latest
+        digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+        signed: true
     niceosContainer: "13"
     appVersion: "2.54.0"
     gitLfsVersion: "3.7.1"
@@ -16,4 +33,7 @@ apps:
       mode: bitnami-compatible-migration-target
       reference: bitnami/git/2/debian-12
     sourceOfTruth: https://specs.niceos.ru/niceos-containers/app-git
-    sourceCommit: 20bb3a3149ac883a34e84ee1e39c54ee8f62fc88
+    sourceCommit: 16c930c6de2bf70204334e0ba3be8c98ac6a1dab
+    docs:
+      readme: apps/git/README.md
+      release: apps/git/docs/releases/2.54.0-niceos13-r1.md

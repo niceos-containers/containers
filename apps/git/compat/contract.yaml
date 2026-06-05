@@ -1,7 +1,7 @@
 name: git
 type: bitnami-compatible-migration-target
 vendor: NiceSOFT
-image: docker.io/niceosapps/git
+image: docker.io/niceos/git
 base_build_image: docker.io/niceosapps/niceos-container-base:13
 final_image_base: scratch
 
@@ -15,9 +15,9 @@ compatibility_reference:
 
 version:
   niceos_container: "13"
-  app_version: "2.53.0"
+  app_version: "2.54.0"
   image_revision: "1"
-  tag: "2.53.0-niceos13-r1"
+  tag: "2.54.0-niceos13-r1"
 
 runtime_contract:
   entrypoint:
@@ -26,7 +26,7 @@ runtime_contract:
     - /bin/bash
   environment:
     BITNAMI_APP_NAME: git
-    APP_VERSION: "2.53.0"
+    APP_VERSION: "2.54.0"
     IMAGE_REVISION: "1"
     NSS_WRAPPER_LIB: /opt/bitnami/common/lib/libnss_wrapper.so
     PATH_PREFIX:
@@ -105,3 +105,8 @@ niceos_implementation:
   compatibility_symlinks:
     /opt/bitnami/git/bin/git: /usr/bin/git
     /opt/bitnami/common/lib/libnss_wrapper.so: /usr/lib64/libnss_wrapper.so.0
+
+
+registries:
+  dockerHub: docker.io/niceos/git
+  ghcr: ghcr.io/niceos-containers/git

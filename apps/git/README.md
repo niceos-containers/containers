@@ -662,3 +662,28 @@ Recommended support workflow:
 ## Disclaimer
 
 This is a NiceOS Application Container. It is not an official Bitnami container and is not affiliated with or endorsed by Bitnami, Broadcom, VMware, or the Git project. Compatibility references are used only to describe migration behavior and runtime contract expectations.
+
+<!-- niceos:app-git-registries:begin -->
+## Registries
+
+Docker Hub:
+
+```text
+docker.io/niceos/git:2.54.0-niceos13-r1
+docker.io/niceos/git:2.54.0
+docker.io/niceos/git:latest
+```
+
+GitHub Container Registry:
+
+```text
+ghcr.io/niceos-containers/git:2.54.0-niceos13-r1
+ghcr.io/niceos-containers/git:2.54.0
+ghcr.io/niceos-containers/git:latest
+```
+
+Digests:
+
+- Docker Hub immutable digest: `docker.io/niceos/git@sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790`
+- GHCR immutable digest: `ghcr.io/niceos-containers/git@sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790`
+<!-- niceos:app-git-registries:end -->
