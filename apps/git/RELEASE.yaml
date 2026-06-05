@@ -8,8 +8,8 @@ mode: update
 release:
   appVersion: "2.54.0"
   niceosStream: "13"
-  imageRevision: 1
-  immutableTag: "2.54.0-niceos13-r1"
+  imageRevision: 2
+  immutableTag: "2.54.0-niceos13-r2"
   versionTag: "2.54.0"
   channelTag: "latest"
 source:
@@ -17,24 +17,24 @@ source:
   publicMonorepo: https://github.com/niceos-containers/containers
   publicPath: apps/git
   appSourceTag: 
-  buildSourceCommit: f4bca9e3c605803bfef5ca85ecc4a282c8ae33b2
-  metadataCommit: 03ee75bd9fd4a5fedc122391d587c3cc31612c24
+  buildSourceCommit: 33da03c58d3d59e5918c79b985bc6705d92c4d53
+  metadataCommit: 61e5be8df010bd2a7471c78caa9f3f623457ee8e
 images:
   dockerHub:
     repository: docker.io/niceos/git
     tags:
-      immutable: 2.54.0-niceos13-r1
+      immutable: 2.54.0-niceos13-r2
       version: "2.54.0"
       channel: latest
-    digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+    digest: sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d
     signed: true
   ghcr:
     repository: ghcr.io/niceos-containers/git
     tags:
-      immutable: 2.54.0-niceos13-r1
+      immutable: 2.54.0-niceos13-r2
       version: "2.54.0"
       channel: latest
-    digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+    digest: sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d
     signed: true
 runtime:
   niceosContainer: "13"
@@ -62,4 +62,4 @@ security:
   buildToolsInRuntime: false
 generated:
   tool: niceos_app_git_release_v2.py
-  at: 2026-06-05T13:32:29Z
+  at: 2026-06-05T13:51:04Z

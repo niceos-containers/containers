@@ -11,13 +11,13 @@ This image is not an official Bitnami image and is not endorsed by Bitnami, Broa
 ## TL;DR
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 git --version
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git --version
 ```
 
 Run an interactive shell:
 
 ```console
-docker run --rm -it docker.io/niceos/git:2.54.0-niceos13-r1
+docker run --rm -it docker.io/niceos/git:2.54.0-niceos13-r2
 ```
 
 Clone a repository over HTTPS:
@@ -26,7 +26,7 @@ Clone a repository over HTTPS:
 docker run --rm -it \
   -v "$PWD/work:/work" \
   -w /work \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   git clone https://github.com/git/git.git
 ```
 
@@ -35,7 +35,7 @@ Run with an arbitrary non-root UID:
 ```console
 docker run --rm \
   --user 12345:0 \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   /bin/bash -c 'id && getent passwd "$(id -u)" && git --version'
 ```
 
@@ -50,7 +50,7 @@ docker run --rm \
   --tmpfs /tmp:rw,exec,nosuid,nodev \
   --tmpfs /var/tmp:rw,exec,nosuid,nodev \
   --tmpfs /run:rw,nosuid,nodev \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   git --version
 ```
 
@@ -113,7 +113,7 @@ The final image intentionally removes package manager and build-time tooling fro
 Recommended immutable tag:
 
 ```text
-docker.io/niceos/git:2.54.0-niceos13-r1
+docker.io/niceos/git:2.54.0-niceos13-r2
 ```
 
 Convenience version tag:
@@ -133,13 +133,13 @@ docker.io/niceos/git:2.54
 For production, prefer immutable tags such as:
 
 ```text
-2.54.0-niceos13-r1
+2.54.0-niceos13-r2
 ```
 
 ### Tag meaning
 
 ```text
-2.54.0-niceos13-r1
+2.54.0-niceos13-r2
 │      │        └── image revision
 │      └────────── NiceOS.Container release stream
 └───────────────── upstream Git application version
@@ -186,7 +186,7 @@ Git commands are exposed through `/opt/bitnami/git/bin` as compatibility symlink
 Expected command resolution:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 command -v git
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 command -v git
 ```
 
 Expected output:
@@ -198,7 +198,7 @@ Expected output:
 Expected Git LFS command resolution:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 command -v git-lfs
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 command -v git-lfs
 ```
 
 Expected output:
@@ -234,25 +234,25 @@ The container entrypoint prepares the compatibility runtime and then executes th
 Show Git version:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 git --version
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git --version
 ```
 
 Show Git LFS version:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 git-lfs version
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git-lfs version
 ```
 
 Run Bash:
 
 ```console
-docker run --rm -it docker.io/niceos/git:2.54.0-niceos13-r1 /bin/bash
+docker run --rm -it docker.io/niceos/git:2.54.0-niceos13-r2 /bin/bash
 ```
 
 Run a login shell:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 /bin/bash -lc 'echo "$PATH" && command -v git'
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 /bin/bash -lc 'echo "$PATH" && command -v git'
 ```
 
 ---
@@ -270,7 +270,7 @@ The image includes CA certificates and a deterministic system Git configuration:
 Example:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 \
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 \
   git ls-remote https://github.com/git/git.git HEAD
 ```
 
@@ -293,7 +293,7 @@ Example with a mounted private key:
 docker run --rm -it \
   -v "$HOME/.ssh:/ssh:ro" \
   -e GIT_SSH_COMMAND='ssh -i /ssh/id_ed25519 -o StrictHostKeyChecking=accept-new' \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   git ls-remote git@github.com:git/git.git HEAD
 ```
 
@@ -320,7 +320,7 @@ The image provides system-wide Git LFS filter configuration in `/etc/gitconfig`:
 Verify:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 \
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 \
   /bin/bash -c 'git-lfs version && git lfs env'
 ```
 
@@ -335,7 +335,7 @@ Example:
 ```console
 docker run --rm \
   --user 12345:0 \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   /bin/bash -c 'id && getent passwd "$(id -u)" && git --version'
 ```
 
@@ -362,7 +362,7 @@ docker run --rm \
   --tmpfs /tmp:rw,exec,nosuid,nodev \
   --tmpfs /var/tmp:rw,exec,nosuid,nodev \
   --tmpfs /run:rw,nosuid,nodev \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   /bin/bash -c 'git --version && git ls-remote https://github.com/git/git.git HEAD >/dev/null && echo OK'
 ```
 
@@ -396,7 +396,7 @@ Example:
 docker run --rm -it \
   -v "$PWD:/work" \
   -w /work \
-  docker.io/niceos/git:2.54.0-niceos13-r1 \
+  docker.io/niceos/git:2.54.0-niceos13-r2 \
   git status
 ```
 
@@ -436,7 +436,7 @@ docker run --rm bitnami/git:latest git --version
 NiceOS style:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 git --version
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git --version
 ```
 
 For production, prefer immutable tags instead of `latest`.
@@ -488,7 +488,7 @@ podman build --format docker --no-cache \
   --build-arg NICEOS_VERSION=13 \
   --build-arg APP_VERSION=2.54.0 \
   --build-arg IMAGE_REVISION=1 \
-  -t docker.io/niceos/git:2.54.0-niceos13-r1 \
+  -t docker.io/niceos/git:2.54.0-niceos13-r2 \
   -t docker.io/niceos/git:2.54.0 \
   .
 ```
@@ -496,7 +496,7 @@ podman build --format docker --no-cache \
 Optional compatibility tag for local testing with the historical internal namespace:
 
 ```console
-podman tag docker.io/niceos/git:2.54.0-niceos13-r1 docker.io/niceosapps/git:2.54.0-niceos13-r1
+podman tag docker.io/niceos/git:2.54.0-niceos13-r2 docker.io/niceosapps/git:2.54.0-niceos13-r2
 ```
 
 ---
@@ -506,13 +506,13 @@ podman tag docker.io/niceos/git:2.54.0-niceos13-r1 docker.io/niceosapps/git:2.54
 Run the local smoke suite:
 
 ```console
-./tests/smoke.sh docker.io/niceos/git:2.54.0-niceos13-r1
+./tests/smoke.sh docker.io/niceos/git:2.54.0-niceos13-r2
 ```
 
 Run the local compatibility suite:
 
 ```console
-./tests/local-compat-suite.sh docker.io/niceos/git:2.54.0-niceos13-r1
+./tests/local-compat-suite.sh docker.io/niceos/git:2.54.0-niceos13-r2
 ```
 
 Compare with the reference image, when available:
@@ -520,13 +520,13 @@ Compare with the reference image, when available:
 ```console
 ./tests/compare-with-bitnami.sh \
   docker.io/bitnami/git:latest \
-  docker.io/niceos/git:2.54.0-niceos13-r1
+  docker.io/niceos/git:2.54.0-niceos13-r2
 ```
 
 Run individual checks manually:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 /bin/bash -c '
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 /bin/bash -c '
 set -euo pipefail
 test "$BITNAMI_APP_NAME" = "git"
 test "$BITNAMI_ROOT_DIR" = "/opt/bitnami"
@@ -643,7 +643,7 @@ Recommended support workflow:
 
 ## Notable changes
 
-### 2.54.0-niceos13-r1
+### 2.54.0-niceos13-r2
 
 - Initial NiceOS Git application image.
 - Uses NiceOS.Container 13 base.
@@ -669,7 +669,7 @@ This is a NiceOS Application Container. It is not an official Bitnami container 
 Docker Hub:
 
 ```text
-docker.io/niceos/git:2.54.0-niceos13-r1
+docker.io/niceos/git:2.54.0-niceos13-r2
 docker.io/niceos/git:2.54.0
 docker.io/niceos/git:latest
 ```
@@ -677,13 +677,13 @@ docker.io/niceos/git:latest
 GitHub Container Registry:
 
 ```text
-ghcr.io/niceos-containers/git:2.54.0-niceos13-r1
+ghcr.io/niceos-containers/git:2.54.0-niceos13-r2
 ghcr.io/niceos-containers/git:2.54.0
 ghcr.io/niceos-containers/git:latest
 ```
 
 Digests:
 
-- Docker Hub immutable digest: `docker.io/niceos/git@sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790`
-- GHCR immutable digest: `ghcr.io/niceos-containers/git@sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790`
+- Docker Hub immutable digest: `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d`
+- GHCR immutable digest: `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d`
 <!-- niceos:app-git-registries:end -->

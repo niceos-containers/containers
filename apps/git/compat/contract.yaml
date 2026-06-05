@@ -16,8 +16,8 @@ compatibility_reference:
 version:
   niceos_container: "13"
   app_version: "2.54.0"
-  image_revision: "1"
-  tag: "2.54.0-niceos13-r1"
+  image_revision: "2"
+  tag: "2.54.0-niceos13-r2"
 
 runtime_contract:
   entrypoint:
@@ -27,7 +27,7 @@ runtime_contract:
   environment:
     BITNAMI_APP_NAME: git
     APP_VERSION: "2.54.0"
-    IMAGE_REVISION: "1"
+    IMAGE_REVISION: "2"
     NSS_WRAPPER_LIB: /opt/bitnami/common/lib/libnss_wrapper.so
     PATH_PREFIX:
       - /opt/bitnami/git/bin

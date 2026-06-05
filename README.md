@@ -25,14 +25,14 @@ docker run --rm ghcr.io/niceos-containers/git:latest git --version
 For production, prefer immutable tags or digest-pinned references:
 
 ```console
-docker run --rm docker.io/niceos/git:2.54.0-niceos13-r1 git --version
-docker run --rm ghcr.io/niceos-containers/git:2.54.0-niceos13-r1 git --version
+docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git --version
+docker run --rm ghcr.io/niceos-containers/git:2.54.0-niceos13-r2 git --version
 ```
 
 ## Current Git image digests
 
-- Docker Hub: `docker.io/niceos/git@sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790`
-- GHCR: `ghcr.io/niceos-containers/git@sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790`
+- Docker Hub: `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d`
+- GHCR: `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d`
 
 ## Monorepo release policy
 
@@ -65,7 +65,7 @@ docs/         Project documentation, when enabled
 Docker Hub:
 
 ```text
-docker.io/niceos/git:2.54.0-niceos13-r1
+docker.io/niceos/git:2.54.0-niceos13-r2
 docker.io/niceos/git:2.54.0
 docker.io/niceos/git:latest
 ```
@@ -73,7 +73,7 @@ docker.io/niceos/git:latest
 GitHub Container Registry:
 
 ```text
-ghcr.io/niceos-containers/git:2.54.0-niceos13-r1
+ghcr.io/niceos-containers/git:2.54.0-niceos13-r2
 ghcr.io/niceos-containers/git:2.54.0
 ghcr.io/niceos-containers/git:latest
 ```
@@ -95,7 +95,7 @@ https://github.com/niceos-containers/containers/tree/main/apps/git
 Latest app metadata commit mirrored here:
 
 ```text
-16c930c6de2bf70204334e0ba3be8c98ac6a1dab
+4965019f6162f7daeebd4f554040218b6486c620
 ```
 
 ## License

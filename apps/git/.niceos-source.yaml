@@ -6,8 +6,8 @@ sourceOfTruth:
   url: https://specs.niceos.ru/niceos-containers/app-git
   branch: main
   tag: 
-  buildSourceCommit: f4bca9e3c605803bfef5ca85ecc4a282c8ae33b2
-  metadataCommit: 03ee75bd9fd4a5fedc122391d587c3cc31612c24
+  buildSourceCommit: 33da03c58d3d59e5918c79b985bc6705d92c4d53
+  metadataCommit: 61e5be8df010bd2a7471c78caa9f3f623457ee8e
 publicMonorepo:
   type: git
   url: https://github.com/niceos-containers/containers
@@ -19,10 +19,10 @@ images:
     repository: git
     image: docker.io/niceos/git
     tags:
-      - 2.54.0-niceos13-r1
+      - 2.54.0-niceos13-r2
       - "2.54.0"
       - latest
-    digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+    digest: sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d
     signed: true
   ghcr:
     registry: ghcr.io
@@ -30,10 +30,10 @@ images:
     repository: git
     image: ghcr.io/niceos-containers/git
     tags:
-      - 2.54.0-niceos13-r1
+      - 2.54.0-niceos13-r2
       - "2.54.0"
       - latest
-    digest: sha256:0e03b23aed2da4bc7e10de3160781c83ff88c8e9285963f68f83e693b60be790
+    digest: sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d
     signed: true
 runtime:
   niceosContainer: "13"
@@ -45,4 +45,4 @@ compatibility:
 sync:
   mode: update
   generatedBy: niceos_app_git_release_v2.py
-  generatedAt: 2026-06-05T13:32:29Z
+  generatedAt: 2026-06-05T13:51:04Z
