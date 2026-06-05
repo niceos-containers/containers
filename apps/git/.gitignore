@@ -1,0 +1,58 @@
+# Local build artifacts
+work/
+artifacts/
+reports/
+tmp/
+.cache/
+
+# Container/image outputs
+*.oci
+*.docker
+*.img
+*.sbom
+*.spdx
+*.cyclonedx.json
+
+# Logs
+*.log
+*.out
+*.err
+
+# RPM/source archives generated locally
+*.rpm
+*.srpm
+*.tar
+*.tar.gz
+*.tgz
+*.tar.xz
+*.txz
+*.zip
+
+# Temporary/editor files
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Optional local secrets/configs
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Keep these repository paths tracked when present:
+# !compat/
+# !rootfs/
+# !tests/
+# !Dockerfile
+# !README.md
+# !.dockerignore
+# !.gitignore

@@ -1,0 +1,28 @@
+schemaVersion: 1
+app: git
+kind: niceos-application-container
+sourceOfTruth:
+  type: git
+  url: https://specs.niceos.ru/niceos-containers/app-git
+  branch: main
+  tag: v2.54.0-niceos13-r1
+  commit: 20bb3a3149ac883a34e84ee1e39c54ee8f62fc88
+publicMonorepo:
+  type: git
+  url: https://github.com/niceos-containers/containers
+  path: apps/git
+image:
+  registry: docker.io
+  namespace: niceos
+  repository: git
+  tags:
+    - 2.54.0-niceos13-r1
+    - 2.54.0
+    - latest
+runtime:
+  niceosContainer: "13"
+  git: "2.54.0"
+  gitLfs: "3.7.1"
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/git/2/debian-12

@@ -1,0 +1,9 @@
+[http]
+    sslCAInfo = /etc/pki/tls/certs/ca-bundle.crt
+    sslCAPath = /etc/ssl/certs
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

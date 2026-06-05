@@ -1,0 +1,57 @@
+# Git metadata
+.git
+.gitignore
+.gitattributes
+
+# Build/runtime generated output
+work
+work/
+artifacts
+artifacts/
+reports
+reports/
+tmp
+tmp/
+.cache
+.cache/
+
+# Test-only files are committed to git but excluded from Docker build context
+tests
+tests/
+
+# Reference material not used by the production Dockerfile
+prebuildfs
+prebuildfs/
+
+# Local logs and reports
+*.log
+*.out
+*.err
+*.tmp
+*.swp
+*.swo
+*~
+
+# Archives and packages
+*.tar
+*.tar.gz
+*.tgz
+*.tar.xz
+*.txz
+*.zip
+*.rpm
+*.srpm
+
+# Container build products
+*.oci
+*.docker
+*.img
+*.sbom
+*.spdx
+*.cyclonedx.json
+
+# Editor/OS metadata
+.DS_Store
+Thumbs.db
+.vscode
+.idea

@@ -1,0 +1,107 @@
+name: git
+type: bitnami-compatible-migration-target
+vendor: NiceSOFT
+image: docker.io/niceosapps/git
+base_build_image: docker.io/niceosapps/niceos-container-base:13
+final_image_base: scratch
+
+compatibility_reference:
+  upstream_repository: https://github.com/bitnami/containers
+  upstream_path: bitnami/git/2/debian-12
+  mode: read-only Apache-2.0 compatibility reference
+  copied_paths:
+    - prebuildfs/
+    - rootfs/
+
+version:
+  niceos_container: "13"
+  app_version: "2.53.0"
+  image_revision: "1"
+  tag: "2.53.0-niceos13-r1"
+
+runtime_contract:
+  entrypoint:
+    - /opt/bitnami/scripts/git/entrypoint.sh
+  cmd:
+    - /bin/bash
+  environment:
+    BITNAMI_APP_NAME: git
+    APP_VERSION: "2.53.0"
+    IMAGE_REVISION: "1"
+    NSS_WRAPPER_LIB: /opt/bitnami/common/lib/libnss_wrapper.so
+    PATH_PREFIX:
+      - /opt/bitnami/git/bin
+      - /opt/bitnami/common/bin
+  required_paths:
+    - /opt/bitnami
+    - /opt/bitnami/scripts
+    - /opt/bitnami/scripts/git/entrypoint.sh
+    - /opt/bitnami/git/bin/git
+    - /opt/bitnami/common/lib/libnss_wrapper.so
+    - /bitnami/git
+    - /etc/ssh
+  required_commands:
+    - bash
+    - git
+    - ssh
+    - ssh-keygen
+    - ssh-agent
+    - ssh-add
+    - scp
+    - sftp
+    - getent
+    - id
+    - grep
+    - sed
+    - awk
+    - find
+    - ps
+    - curl
+  forbidden_runtime_commands:
+    - rpm
+    - tdnf
+    - dnf
+    - yum
+    - systemctl
+    - sshd
+    - gcc
+    - make
+    - cmake
+    - ninja
+    - meson
+  non_root:
+    supported: true
+    arbitrary_uid_with_group_0: true
+    nss_wrapper: true
+  ssh:
+    client_supported: true
+    server_installed: false
+    build_time_host_keys_forbidden: true
+    runtime_host_key_generation_by_entrypoint: true
+
+niceos_implementation:
+  package_source: NiceOS.Container RPM repository
+  rpm_packages:
+    - filesystem
+    - niceos-release
+    - glibc
+    - bash
+    - coreutils
+    - findutils
+    - grep
+    - sed
+    - gawk
+    - tar
+    - gzip
+    - xz
+    - tzdata
+    - ca-certificates
+    - curl
+    - git
+    - openssh-clients
+    - nss_wrapper
+    - procps-ng
+    - less
+  compatibility_symlinks:
+    /opt/bitnami/git/bin/git: /usr/bin/git
+    /opt/bitnami/common/lib/libnss_wrapper.so: /usr/lib64/libnss_wrapper.so.0
