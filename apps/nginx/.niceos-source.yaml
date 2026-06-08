@@ -1,0 +1,51 @@
+schemaVersion: 1
+app: nginx
+kind: niceos-application-container
+sourceOfTruth:
+  type: git
+  url: https://specs.niceos.ru/niceos-containers/app-nginx
+  branch: main
+  tag: v1.31.1-niceos13-r1
+  buildSourceCommit: 58fb1be387c7977c95724af26cb7da91b48f2250
+  metadataCommit: pending
+publicMonorepo:
+  type: git
+  url: https://github.com/niceos-containers/containers
+  path: apps/nginx
+images:
+  dockerHub:
+    registry: docker.io
+    namespace: niceos
+    repository: nginx
+    image: docker.io/niceos/nginx
+    tags:
+      - 1.31.1-niceos13-r1
+      - "1.31.1"
+      - latest
+    digest: sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f
+    signed: false
+  ghcr:
+    registry: ghcr.io
+    namespace: niceos-containers
+    repository: nginx
+    image: ghcr.io/niceos-containers/nginx
+    tags:
+      - 1.31.1-niceos13-r1
+      - "1.31.1"
+      - latest
+    digest: sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f
+    signed: false
+base:
+  image: docker.io/niceos/niceos-container-base
+  tag: 13
+  ref: docker.io/niceos/niceos-container-base:13
+runtime:
+  niceosContainer: "13"
+  nginx: "1.31.1"
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/nginx/1.31/debian-12
+sync:
+  mode: release
+  generatedBy: niceos_app_release.py
+  generatedAt: 2026-06-08T18:37:42Z

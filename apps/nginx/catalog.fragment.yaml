@@ -1,0 +1,36 @@
+- name: nginx
+  displayName: "NiceOS NGINX"
+  path: apps/nginx
+  status: published
+  category: web-servers
+  versions:
+    app: "1.31.1"
+    niceosStream: "13"
+    imageRevision: 1
+    immutableTag: 1.31.1-niceos13-r1
+  images:
+    dockerHub:
+      repository: docker.io/niceos/nginx
+      immutableTag: 1.31.1-niceos13-r1
+      versionTag: "1.31.1"
+      channelTag: latest
+      digest: pending
+      signed: false
+    ghcr:
+      repository: ghcr.io/niceos-containers/nginx
+      immutableTag: 1.31.1-niceos13-r1
+      versionTag: "1.31.1"
+      channelTag: latest
+      digest: pending
+      signed: false
+  niceosContainer: "13"
+  appVersion: "1.31.1"
+  runtime: "NGINX 1.31.1"
+  compatibility:
+    mode: bitnami-compatible-migration-target
+    reference: bitnami/nginx/1.31/debian-12
+  sourceOfTruth: https://specs.niceos.ru/niceos-containers/app-nginx
+  sourceCommit: pending
+  docs:
+    readme: apps/nginx/README.md
+    release: apps/nginx/docs/releases/1.31.1-niceos13-r1.md

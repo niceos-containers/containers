@@ -1,0 +1,21 @@
+services:
+  nginx:
+    image: docker.io/niceos/nginx:1.31.1-niceos13-r1
+    user: "1001:0"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      NGINX_HTTP_PORT_NUMBER: "8080"
+      NGINX_HTTPS_PORT_NUMBER: "8443"
+    volumes:
+      - ./work/app:/app:ro
+    read_only: true
+    tmpfs:
+      - /tmp:rw,exec,nosuid,nodev
+      - /var/tmp:rw,exec,nosuid,nodev
+      - /run:rw,nosuid,nodev
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

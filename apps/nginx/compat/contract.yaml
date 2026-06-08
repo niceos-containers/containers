@@ -1,0 +1,75 @@
+schemaVersion: 1
+kind: NiceOSBitnamiCompatibilityContract
+app: nginx
+displayName: NiceOS NGINX
+image: docker.io/niceos/nginx
+base_build_image: docker.io/niceos/niceos-container-base:13
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/nginx/1.31/debian-12
+  notOfficialBitnami: true
+versions:
+  app: "1.31.1"
+  niceos_container: "13"
+  image_revision: "1"
+oci:
+  immutableTag: "1.31.1-niceos13-r1"
+  dockerHub: docker.io/niceos/nginx
+  ghcr: ghcr.io/niceos-containers/nginx
+runtime:
+  user: "1001"
+  workdir: /app
+  entrypoint:
+    - /opt/bitnami/scripts/nginx/entrypoint.sh
+  cmd:
+    - /opt/bitnami/scripts/nginx/run.sh
+  stopSignal: SIGQUIT
+  exposedPorts:
+    - 8080
+    - 8443
+paths:
+  preserved:
+    - /opt/bitnami
+    - /opt/bitnami/nginx
+    - /opt/bitnami/nginx/sbin/nginx
+    - /opt/bitnami/nginx/conf
+    - /opt/bitnami/nginx/conf.default
+    - /opt/bitnami/nginx/conf/server_blocks
+    - /opt/bitnami/nginx/conf/stream_server_blocks
+    - /opt/bitnami/nginx/conf/context.d/main
+    - /opt/bitnami/nginx/conf/context.d/events
+    - /opt/bitnami/nginx/conf/context.d/http
+    - /opt/bitnami/nginx/logs
+    - /opt/bitnami/scripts/nginx/entrypoint.sh
+    - /opt/bitnami/scripts/nginx/setup.sh
+    - /opt/bitnami/scripts/nginx/run.sh
+    - /app
+    - /bitnami/nginx
+environment:
+  required:
+    BITNAMI_APP_NAME: nginx
+    BITNAMI_ROOT_DIR: /opt/bitnami
+    BITNAMI_VOLUME_DIR: /bitnami
+    NGINX_HTTP_PORT_NUMBER: "8080"
+    NGINX_HTTPS_PORT_NUMBER: "8443"
+    NGINX_ENABLE_STREAM: "no"
+    NGINX_WORKER_PROCESSES: auto
+    NSS_WRAPPER_LIB: /opt/bitnami/common/lib/libnss_wrapper.so
+security:
+  arbitraryUid: true
+  readOnlyRootfs: true
+  nonRootDefault: true
+  packageManagerInRuntime: false
+  buildToolsInRuntime: false
+  systemdInRuntime: false
+tests:
+  required:
+    - tests/smoke.sh
+    - tests/bitnami-contract-smoke.sh
+    - tests/local-compat-suite.sh
+    - tests/compare-with-bitnami.sh
+
+
+registries:
+  dockerHub: docker.io/niceos/nginx
+  ghcr: ghcr.io/niceos-containers/nginx

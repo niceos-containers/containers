@@ -1,0 +1,5 @@
+Reference: https://github.com/bitnami/containers/tree/main/bitnami/nginx/1.31/debian-12
+Observed reference version: nginx 1.31.1
+Reference purpose: read-only compatibility reference for runtime layout, ports, entrypoint/CMD, scripts and documented environment contract.
+Production source: NiceOS app-nginx repository and public monorepo path apps/nginx.
+Do not vendor Bitnami build artifacts, Stacksmith tarballs, Debian package manager state or generated reports into this repository.

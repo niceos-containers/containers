@@ -1,0 +1,51 @@
+# Local build/runtime output
+build/
+dist/
+work/
+artifacts/
+reports/
+tmp/
+.cache/
+
+# Logs
+*.log
+*.out
+*.err
+
+# Container/image/SBOM outputs
+*.oci
+*.docker
+*.img
+*.sbom
+*.spdx
+*.cyclonedx.json
+
+# RPM/source archives generated locally
+*.rpm
+*.srpm
+*.tar
+*.tar.gz
+*.tgz
+*.tar.xz
+*.txz
+*.zip
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Editors/OS
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

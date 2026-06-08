@@ -1,0 +1,83 @@
+schemaVersion: 1
+kind: NiceOSAppRelease
+app:
+  name: nginx
+  displayName: "NiceOS NGINX"
+  sourcePath: apps/nginx
+  category: web-servers
+mode: release
+release:
+  appVersion: "1.31.1"
+  niceosStream: "13"
+  imageRevision: 1
+  immutableTag: "1.31.1-niceos13-r1"
+  versionTag: "1.31.1"
+  channelTag: "latest"
+source:
+  sourceOfTruth: https://specs.niceos.ru/niceos-containers/app-nginx
+  publicMonorepo: https://github.com/niceos-containers/containers
+  publicPath: apps/nginx
+  appSourceTag: v1.31.1-niceos13-r1
+  buildSourceCommit: 58fb1be387c7977c95724af26cb7da91b48f2250
+  metadataCommit: pending
+images:
+  dockerHub:
+    repository: docker.io/niceos/nginx
+    tags:
+      immutable: 1.31.1-niceos13-r1
+      version: "1.31.1"
+      channel: latest
+    digest: sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f
+    signed: false
+  ghcr:
+    repository: ghcr.io/niceos-containers/nginx
+    tags:
+      immutable: 1.31.1-niceos13-r1
+      version: "1.31.1"
+      channel: latest
+    digest: sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f
+    signed: false
+base:
+  image: docker.io/niceos/niceos-container-base
+  tag: 13
+  ref: docker.io/niceos/niceos-container-base:13
+runtime:
+  niceosContainer: "13"
+  nginx: "1.31.1"
+  njs: "0.9.9"
+  headersMoreNginxModule: "0.39"
+  mainCommand: "nginx"
+  versionCommand: "nginx -v"
+  healthCommand: "nginx -t"
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/nginx/1.31/debian-12
+  preserves:
+    - /opt/bitnami
+    - /opt/bitnami/nginx
+    - /opt/bitnami/nginx/sbin/nginx
+    - /opt/bitnami/nginx/conf
+    - /opt/bitnami/nginx/conf/server_blocks
+    - /opt/bitnami/nginx/logs
+    - /opt/bitnami/nginx/tmp
+    - /opt/bitnami/scripts/nginx/entrypoint.sh
+    - /opt/bitnami/scripts/nginx/run.sh
+    - /opt/bitnami/scripts/nginx/setup.sh
+    - /app
+    - BITNAMI_APP_NAME
+    - BITNAMI_ROOT_DIR
+    - BITNAMI_VOLUME_DIR
+    - NSS_WRAPPER_LIB
+security:
+  arbitraryUid: true
+  readOnlyRootfs: true
+  packageManagerInRuntime: false
+  sshdInRuntime: false
+  buildToolsInRuntime: false
+docs:
+  readme: apps/nginx/README.md
+  release: apps/nginx/docs/releases/1.31.1-niceos13-r1.md
+generated:
+  tool: niceos_app_release.py
+  app: nginx
+  at: 2026-06-08T18:37:42Z
