@@ -1,0 +1,84 @@
+schemaVersion: 1
+kind: NiceOSBitnamiCompatibilityContract
+app: nginx-exporter
+displayName: NiceOS NGINX Prometheus Exporter
+image: docker.io/niceos/nginx-exporter
+base_build_image: docker.io/niceos/niceos-container-base:13
+
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/nginx-exporter/1/debian-12
+  notOfficialBitnami: true
+  preserveBinaryEntrypoint: true
+
+versions:
+  app: "1.5.1"
+  niceos_container: "13"
+  image_revision: "1"
+
+oci:
+  immutableTag: "1.5.1-niceos13-r1"
+  dockerHub: docker.io/niceos/nginx-exporter
+  ghcr: ghcr.io/niceos-containers/nginx-exporter
+
+runtime:
+  user: "1001"
+  workdir: /opt/bitnami/nginx-exporter
+  entrypoint:
+    - nginx-prometheus-exporter
+  cmd: []
+  exposedPorts:
+    - 9113
+
+paths:
+  preserved:
+    - /opt/bitnami
+    - /opt/bitnami/nginx-exporter
+    - /opt/bitnami/nginx-exporter/bin
+    - /opt/bitnami/nginx-exporter/bin/nginx-prometheus-exporter
+    - /usr/bin/exporter
+  niceosHelpers:
+    - /opt/bitnami/scripts/nginx-exporter-env.sh
+    - /opt/bitnami/scripts/nginx-exporter/entrypoint.sh
+    - /opt/bitnami/scripts/nginx-exporter/run.sh
+
+commands:
+  required:
+    nginx-prometheus-exporter: /opt/bitnami/nginx-exporter/bin/nginx-prometheus-exporter
+    exporter: /usr/bin/exporter
+
+environment:
+  required:
+    APP_VERSION: "1.5.1"
+    BITNAMI_APP_NAME: nginx-exporter
+    BITNAMI_ROOT_DIR: /opt/bitnami
+    IMAGE_REVISION: "1"
+    NICEOS_CONTAINER_STREAM: "13"
+  pathPrefix: /opt/bitnami/nginx-exporter/bin
+
+security:
+  arbitraryUid: true
+  readOnlyRootfs: true
+  nonRootDefault: true
+  packageManagerInRuntime: false
+  buildToolsInRuntime: false
+  systemdInRuntime: false
+  privilegedPorts: false
+
+helm:
+  primaryConsumer: bitnami/nginx metrics sidecar
+  expectedScrapeUri: http://127.0.0.1:8080/status
+  expectedListenAddress: :9113
+
+tests:
+  required:
+    - tests/smoke.sh
+    - tests/bitnami-contract-smoke.sh
+    - tests/local-compat-suite.sh
+    - tests/helm-nginx-chart-metrics-smoke.sh
+  optional:
+    - tests/compare-with-bitnami.sh
+
+registries:
+  dockerHub: docker.io/niceos/nginx-exporter
+  ghcr: ghcr.io/niceos-containers/nginx-exporter

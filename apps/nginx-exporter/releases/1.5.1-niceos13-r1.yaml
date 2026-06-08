@@ -1,0 +1,39 @@
+schemaVersion: 1
+kind: NiceOSContainerAppRelease
+app: nginx-exporter
+version: "1.5.1"
+niceosContainer: "13"
+imageRevision: "1"
+immutableTag: "1.5.1-niceos13-r1"
+images:
+  dockerHub:
+    repository: docker.io/niceos/nginx-exporter
+    tags:
+      - 1.5.1-niceos13-r1
+      - 1.5.1
+      - latest
+  ghcr:
+    repository: ghcr.io/niceos-containers/nginx-exporter
+    tags:
+      - 1.5.1-niceos13-r1
+      - 1.5.1
+      - latest
+compatibility:
+  bitnamiReference: bitnami/nginx-exporter/1/debian-12
+  chartConsumer: bitnami/nginx metrics sidecar
+  defaultEntrypoint: nginx-prometheus-exporter
+  exporterAlias: /usr/bin/exporter
+security:
+  defaultUser: "1001"
+  readOnlyRootfs: true
+  arbitraryUid: true
+  packageManagerInRuntime: false
+  buildToolsInRuntime: false
+tests:
+  required:
+    - smoke
+    - bitnami-contract-smoke
+    - local-compat-suite
+  optional:
+    - helm-nginx-chart-metrics-smoke
+    - compare-with-bitnami

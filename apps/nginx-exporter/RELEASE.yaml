@@ -1,0 +1,82 @@
+schemaVersion: 1
+kind: NiceOSAppRelease
+app:
+  name: nginx-exporter
+  displayName: "NiceOS NGINX Exporter"
+  sourcePath: apps/nginx-exporter
+  category: monitoring
+mode: release
+release:
+  appVersion: "1.5.1"
+  niceosStream: "13"
+  imageRevision: 1
+  immutableTag: "1.5.1-niceos13-r1"
+  versionTag: "1.5.1"
+  channelTag: "latest"
+source:
+  sourceOfTruth: https://specs.niceos.ru/niceos-containers/app-nginx-exporter
+  publicMonorepo: https://github.com/niceos-containers/containers
+  publicPath: apps/nginx-exporter
+  appSourceTag: v1.5.1-niceos13-r1
+  buildSourceCommit: 25dcf038e9314fb38ff68d45ce08be8a552f9185
+  metadataCommit: pending
+images:
+  dockerHub:
+    repository: docker.io/niceos/nginx-exporter
+    tags:
+      immutable: 1.5.1-niceos13-r1
+      version: "1.5.1"
+      channel: latest
+    digest: sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20
+    signed: false
+  ghcr:
+    repository: ghcr.io/niceos-containers/nginx-exporter
+    tags:
+      immutable: 1.5.1-niceos13-r1
+      version: "1.5.1"
+      channel: latest
+    digest: sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20
+    signed: false
+base:
+  image: docker.io/niceos/niceos-container-base
+  tag: 13
+  ref: docker.io/niceos/niceos-container-base:13
+runtime:
+  niceosContainer: "13"
+  nginxExporter: "1.5.1"
+  upstreamProject: "nginxinc/nginx-prometheus-exporter"
+  mainCommand: "nginx-prometheus-exporter"
+  compatCommand: "exporter"
+  versionCommand: "nginx-prometheus-exporter --version"
+  healthCommand: "nginx-prometheus-exporter --help"
+  metricsPort: "9113"
+  metricsPath: "/metrics"
+  defaultScrapeUri: "http://127.0.0.1:8080/stub_status"
+  chartScrapeUri: "http://127.0.0.1:8080/status"
+  nginx-exporter: "1.5.1"
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/nginx-exporter/1/debian-12
+  preserves:
+    - /opt/bitnami
+    - /opt/bitnami/nginx-exporter
+    - /opt/bitnami/nginx-exporter/bin
+    - /opt/bitnami/nginx-exporter/bin/nginx-prometheus-exporter
+    - /usr/bin/exporter
+    - BITNAMI_APP_NAME
+    - APP_VERSION
+    - IMAGE_REVISION
+    - PATH
+security:
+  arbitraryUid: true
+  readOnlyRootfs: true
+  packageManagerInRuntime: false
+  sshdInRuntime: false
+  buildToolsInRuntime: false
+docs:
+  readme: apps/nginx-exporter/README.md
+  release: apps/nginx-exporter/docs/releases/1.5.1-niceos13-r1.md
+generated:
+  tool: niceos_app_release.py
+  app: nginx-exporter
+  at: 2026-06-08T21:22:28Z

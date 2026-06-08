@@ -1,0 +1,27 @@
+Bitnami compatibility reference for NiceOS nginx-exporter
+========================================================
+
+Reference repository:
+  https://github.com/bitnami/containers/tree/main/bitnami/nginx-exporter
+
+Reference path:
+  bitnami/nginx-exporter/1/debian-12
+
+Observed runtime contract to preserve:
+  - APP_VERSION is exported.
+  - BITNAMI_APP_NAME=nginx-exporter is exported.
+  - IMAGE_REVISION is exported.
+  - PATH includes /opt/bitnami/nginx-exporter/bin.
+  - /opt/bitnami/nginx-exporter/bin/nginx-prometheus-exporter is the app binary path.
+  - /usr/bin/exporter is an alias used by Bitnami charts.
+  - EXPOSE 9113.
+  - WORKDIR /opt/bitnami/nginx-exporter.
+  - USER 1001.
+  - ENTRYPOINT starts nginx-prometheus-exporter directly.
+
+NiceOS policy:
+  - Do not copy Debian/minideb/apt/Stacksmith internals.
+  - Build the exporter as a NiceOS.Container RPM.
+  - Install the RPM into a clean installroot.
+  - Remove package managers, RPM database, build tools and caches from the final scratch runtime image.
+  - Keep the Bitnami runtime contract only where chart/user compatibility depends on it.

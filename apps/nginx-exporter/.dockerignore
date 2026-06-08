@@ -1,0 +1,17 @@
+.git
+.gitignore
+build
+dist
+work
+artifacts
+reports
+tmp
+.cache
+*.log
+*.tmp
+*.tar
+*.tar.gz
+*.tar.xz
+*.rpm
+*.src.rpm
+docs/releases/*.draft.md

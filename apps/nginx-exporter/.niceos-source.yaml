@@ -1,0 +1,51 @@
+schemaVersion: 1
+app: nginx-exporter
+kind: niceos-application-container
+sourceOfTruth:
+  type: git
+  url: https://specs.niceos.ru/niceos-containers/app-nginx-exporter
+  branch: main
+  tag: v1.5.1-niceos13-r1
+  buildSourceCommit: 25dcf038e9314fb38ff68d45ce08be8a552f9185
+  metadataCommit: pending
+publicMonorepo:
+  type: git
+  url: https://github.com/niceos-containers/containers
+  path: apps/nginx-exporter
+images:
+  dockerHub:
+    registry: docker.io
+    namespace: niceos
+    repository: nginx-exporter
+    image: docker.io/niceos/nginx-exporter
+    tags:
+      - 1.5.1-niceos13-r1
+      - "1.5.1"
+      - latest
+    digest: sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20
+    signed: false
+  ghcr:
+    registry: ghcr.io
+    namespace: niceos-containers
+    repository: nginx-exporter
+    image: ghcr.io/niceos-containers/nginx-exporter
+    tags:
+      - 1.5.1-niceos13-r1
+      - "1.5.1"
+      - latest
+    digest: sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20
+    signed: false
+base:
+  image: docker.io/niceos/niceos-container-base
+  tag: 13
+  ref: docker.io/niceos/niceos-container-base:13
+runtime:
+  niceosContainer: "13"
+  nginx-exporter: "1.5.1"
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/nginx-exporter/1/debian-12
+sync:
+  mode: release
+  generatedBy: niceos_app_release.py
+  generatedAt: 2026-06-08T21:22:28Z
