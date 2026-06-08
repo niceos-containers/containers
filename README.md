@@ -6,33 +6,48 @@ NiceOS Application Containers are free, RPM-based, glibc-based application image
 
 ## Published images
 
-| App | Docker Hub | GHCR | Status | Runtime | Compatibility |
-|---|---|---|---:|---|---|
-| Git | `docker.io/niceos/git` | `ghcr.io/niceos-containers/git` | Published | Git 2.54.0 + Git LFS 3.7.1 | Bitnami-compatible migration target |
+| App | Docker Hub | GHCR | Runtime | Compatibility reference |
+|---|---|---|---|---|
+| NiceOS Git | `docker.io/niceos/git:2.54.0-niceos13-r2` | `ghcr.io/niceos-containers/git:2.54.0-niceos13-r2` | Git 2.54.0 + Git LFS 3.7.1 | `bitnami/git/2/debian-12` |
+| NiceOS Golang | `docker.io/niceos/golang:1.26.4-niceos13-r1` | `ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1` | Go 1.26.4 | `bitnami/golang/1.26/debian-12` |
 
 ## Quick start
 
-```console
-docker run --rm docker.io/niceos/git:latest git --version
-```
+For production, prefer immutable tags or digest-pinned references instead of `latest`.
 
-GHCR mirror:
-
-```console
-docker run --rm ghcr.io/niceos-containers/git:latest git --version
-```
-
-For production, prefer immutable tags or digest-pinned references:
+### NiceOS Git
 
 ```console
 docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git --version
 docker run --rm ghcr.io/niceos-containers/git:2.54.0-niceos13-r2 git --version
 ```
 
-## Current Git image digests
+### NiceOS Golang
 
-- Docker Hub: `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d`
-- GHCR: `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d`
+```console
+docker run --rm docker.io/niceos/golang:1.26.4-niceos13-r1 go version
+docker run --rm ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1 go version
+```
+
+## Current image digests
+
+| App | Docker Hub digest | GHCR digest |
+|---|---|---|
+| NiceOS Git | `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` | `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` |
+| NiceOS Golang | `docker.io/niceos/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` | `ghcr.io/niceos-containers/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` |
+
+## Public catalog
+
+The generated catalog is stored in:
+
+```text
+catalog/apps.yaml
+```
+
+Currently published apps:
+
+- `git`: `docker.io/niceos/git:2.54.0-niceos13-r2` / `ghcr.io/niceos-containers/git:2.54.0-niceos13-r2`
+- `golang`: `docker.io/niceos/golang:1.26.4-niceos13-r1` / `ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1`
 
 ## Monorepo release policy
 
@@ -43,8 +58,9 @@ This repository is a public monorepo. Git tags point to a commit of the entire r
 ```text
 apps/
   git/        NiceOS Git application container
+  golang/        NiceOS Golang application container
 catalog/
-  apps.yaml   Public application catalog
+  apps.yaml   Public application catalog generated from apps/* metadata
 docs/         Project documentation, when enabled
 ```
 
@@ -60,42 +76,14 @@ docs/         Project documentation, when enabled
 - No package manager in final runtime images.
 - No build tools in final runtime images.
 
-## Images
-
-Docker Hub:
-
-```text
-docker.io/niceos/git:2.54.0-niceos13-r2
-docker.io/niceos/git:2.54.0
-docker.io/niceos/git:latest
-```
-
-GitHub Container Registry:
-
-```text
-ghcr.io/niceos-containers/git:2.54.0-niceos13-r2
-ghcr.io/niceos-containers/git:2.54.0
-ghcr.io/niceos-containers/git:latest
-```
-
 ## Source of truth
 
-Primary development happens on NiceOS infrastructure:
+Primary development happens on NiceOS infrastructure. This GitHub repository is a public monorepo mirror and discovery point.
+
+Public monorepo:
 
 ```text
-https://specs.niceos.ru/niceos-containers/app-git
-```
-
-Public app path:
-
-```text
-https://github.com/niceos-containers/containers/tree/main/apps/git
-```
-
-Latest app metadata commit mirrored here:
-
-```text
-4965019f6162f7daeebd4f554040218b6486c620
+https://github.com/niceos-containers/containers
 ```
 
 ## License
