@@ -14,10 +14,10 @@ compatibility:
 versions:
   app: "1.5.1"
   niceos_container: "13"
-  image_revision: "1"
+  image_revision: "2"
 
 oci:
-  immutableTag: "1.5.1-niceos13-r1"
+  immutableTag: "1.5.1-niceos13-r2"
   dockerHub: docker.io/niceos/nginx-exporter
   ghcr: ghcr.io/niceos-containers/nginx-exporter
 
@@ -52,7 +52,7 @@ environment:
     APP_VERSION: "1.5.1"
     BITNAMI_APP_NAME: nginx-exporter
     BITNAMI_ROOT_DIR: /opt/bitnami
-    IMAGE_REVISION: "1"
+    IMAGE_REVISION: "2"
     NICEOS_CONTAINER_STREAM: "13"
   pathPrefix: /opt/bitnami/nginx-exporter/bin
 

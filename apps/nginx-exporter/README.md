@@ -13,20 +13,20 @@ This image is **not** an official Bitnami image and is not endorsed by Bitnami, 
 Run exporter with default scrape settings:
 
 ```console
-docker run --rm -p 9113:9113 docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
+docker run --rm -p 9113:9113 docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
 ```
 
 Run against a local NGINX stub status endpoint:
 
 ```console
-docker run --rm -p 9113:9113 docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1 \
+docker run --rm -p 9113:9113 docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2 \
   --nginx.scrape-uri=http://127.0.0.1:8080/status
 ```
 
 Run as a Bitnami/NiceOS NGINX chart metrics sidecar command:
 
 ```console
-docker run --rm -p 9113:9113 --entrypoint exporter docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1 \
+docker run --rm -p 9113:9113 --entrypoint exporter docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2 \
   --nginx.scrape-uri=http://127.0.0.1:8080/status
 ```
 
@@ -41,7 +41,7 @@ docker run --rm \
   --tmpfs /tmp:rw,nosuid,nodev \
   --tmpfs /var/tmp:rw,nosuid,nodev \
   -p 9113:9113 \
-  docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1 \
+  docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2 \
   --web.listen-address=:9113 \
   --nginx.scrape-uri=http://127.0.0.1:8080/status
 ```
@@ -76,8 +76,8 @@ The goal is not to copy Bitnami internals. For `nginx-exporter`, the Bitnami ima
 Immutable tag:
 
 ```text
-docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
-ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r1
+docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
+ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2
 ```
 
 Version tag:
@@ -138,7 +138,7 @@ The wrapper scripts are present only for diagnostics and future NiceOS consisten
 | `APP_VERSION` | `1.5.1` | Exporter version marker |
 | `IMAGE_REVISION` | `1` | NiceOS image revision |
 | `BITNAMI_APP_NAME` | `nginx-exporter` | Bitnami-style app identifier |
-| `BITNAMI_IMAGE_VERSION` | `1.5.1-niceos13-r1` | Bitnami-style image version marker |
+| `BITNAMI_IMAGE_VERSION` | `1.5.1-niceos13-r2` | Bitnami-style image version marker |
 | `BITNAMI_ROOT_DIR` | `/opt/bitnami` | Bitnami-style root |
 | `NICEOS_CONTAINER_STREAM` | `13` | NiceOS.Container stream |
 | `OS_FLAVOUR` | `niceos-container-13` | NiceOS OS flavour marker |
@@ -166,7 +166,7 @@ metrics:
   image:
     registry: docker.io
     repository: niceos/nginx-exporter
-    tag: 1.5.1-niceos13-r1
+    tag: 1.5.1-niceos13-r2
 ```
 
 For strict compatibility with a chart release that still expects `1.4.2`, build and publish a legacy-compatible NiceOS tag:
@@ -185,7 +185,7 @@ metrics:
   image:
     registry: docker.io
     repository: niceos/nginx-exporter
-    tag: 1.5.1-niceos13-r1
+    tag: 1.5.1-niceos13-r2
 ```
 
 ---
@@ -197,7 +197,7 @@ podman build --format docker --no-cache \
   --build-arg NICEOS_VERSION=13 \
   --build-arg APP_VERSION=1.5.1 \
   --build-arg IMAGE_REVISION=1 \
-  -t docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1 \
+  -t docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2 \
   -t docker.io/niceos/nginx-exporter:1.5.1 \
   -t docker.io/niceos/nginx-exporter:latest .
 ```
@@ -213,7 +213,7 @@ If your RPM package name differs, pass it during build:
 ```console
 podman build \
   --build-arg NICEOS_EXPORTER_PACKAGE=nginx-exporter \
-  -t docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1 .
+  -t docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2 .
 ```
 
 ---
@@ -221,9 +221,9 @@ podman build \
 ## Testing
 
 ```console
-./tests/smoke.sh docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
-./tests/bitnami-contract-smoke.sh docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
-./tests/local-compat-suite.sh docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
+./tests/smoke.sh docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
+./tests/bitnami-contract-smoke.sh docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
+./tests/local-compat-suite.sh docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
 ```
 
 The tests check:
@@ -243,7 +243,7 @@ Optional chart rendering test:
 
 ```console
 ./tests/helm-nginx-chart-metrics-smoke.sh /DATA2/niceos-containers/chart-nginx/chart \
-  docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
+  docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
 ```
 
 ---
@@ -285,13 +285,13 @@ Metadata-only monorepo refresh:
 │   ├── SECURITY.md
 │   ├── TESTING.md
 │   └── releases
-│       └── 1.5.1-niceos13-r1.md
+│       └── 1.5.1-niceos13-r2.md
 ├── packaging
 │   └── rpm
 │       ├── create-vendor-archive.sh
 │       └── nginx-prometheus-exporter.spec
 ├── releases
-│   └── 1.5.1-niceos13-r1.yaml
+│   └── 1.5.1-niceos13-r2.yaml
 ├── rootfs
 │   ├── etc/profile.d/00-bitnami-nginx-exporter-path.sh
 │   └── opt/bitnami
@@ -318,7 +318,7 @@ Metadata-only monorepo refresh:
 Docker Hub:
 
 ```text
-docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
+docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
 docker.io/niceos/nginx-exporter:1.5.1
 docker.io/niceos/nginx-exporter:latest
 ```
@@ -326,7 +326,7 @@ docker.io/niceos/nginx-exporter:latest
 GitHub Container Registry:
 
 ```text
-ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r1
+ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2
 ghcr.io/niceos-containers/nginx-exporter:1.5.1
 ghcr.io/niceos-containers/nginx-exporter:latest
 ```
@@ -337,7 +337,7 @@ ghcr.io/niceos-containers/nginx-exporter:latest
 Docker Hub:
 
 ```text
-docker.io/niceos/nginx-exporter:1.5.1-niceos13-r1
+docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2
 docker.io/niceos/nginx-exporter:1.5.1
 docker.io/niceos/nginx-exporter:latest
 ```
@@ -345,13 +345,13 @@ docker.io/niceos/nginx-exporter:latest
 GitHub Container Registry:
 
 ```text
-ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r1
+ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2
 ghcr.io/niceos-containers/nginx-exporter:1.5.1
 ghcr.io/niceos-containers/nginx-exporter:latest
 ```
 
 Digests:
 
-- Docker Hub immutable digest: `docker.io/niceos/nginx-exporter@sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20`
-- GHCR immutable digest: `ghcr.io/niceos-containers/nginx-exporter@sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20`
+- Docker Hub immutable digest: `docker.io/niceos/nginx-exporter@sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad`
+- GHCR immutable digest: `ghcr.io/niceos-containers/nginx-exporter@sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad`
 <!-- niceos:app-nginx-exporter-registries:end -->

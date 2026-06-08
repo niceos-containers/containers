@@ -1,5 +1,5 @@
 schemaVersion: 1
-generatedAt: 2026-06-08T21:22:28Z
+generatedAt: 2026-06-08T21:42:31Z
 apps:
   - name: git
     displayName: "NiceOS Git"
@@ -117,22 +117,22 @@ apps:
     versions:
       app: "1.5.1"
       niceosStream: "13"
-      imageRevision: 1
-      immutableTag: 1.5.1-niceos13-r1
+      imageRevision: 2
+      immutableTag: 1.5.1-niceos13-r2
     images:
       dockerHub:
         repository: docker.io/niceos/nginx-exporter
-        immutableTag: 1.5.1-niceos13-r1
+        immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20
+        digest: sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad
         signed: false
       ghcr:
         repository: ghcr.io/niceos-containers/nginx-exporter
-        immutableTag: 1.5.1-niceos13-r1
+        immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: sha256:e25c8919846566a5cc4a284ce44c327f28c741612033282bd13c3a7233899e20
+        digest: sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad
         signed: false
     niceosContainer: "13"
     appVersion: "1.5.1"
@@ -144,4 +144,4 @@ apps:
     sourceCommit: pending
     docs:
       readme: apps/nginx-exporter/README.md
-      release: apps/nginx-exporter/docs/releases/1.5.1-niceos13-r1.md
+      release: apps/nginx-exporter/docs/releases/1.5.1-niceos13-r2.md
