@@ -52,7 +52,7 @@ docker run --rm ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2 nginx
 | NiceOS Git | `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` | `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` |
 | NiceOS Golang | `docker.io/niceos/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` | `ghcr.io/niceos-containers/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` |
 | NiceOS NGINX | `docker.io/niceos/nginx@sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f` | `ghcr.io/niceos-containers/nginx@sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f` |
-| NiceOS NGINX Exporter | `docker.io/niceos/nginx-exporter@sha256:6b5c5f52cae3acb4ada82dc1a3903fd36596dfa7e09d23425186a2f424809430` | `ghcr.io/niceos-containers/nginx-exporter@sha256:6b5c5f52cae3acb4ada82dc1a3903fd36596dfa7e09d23425186a2f424809430` |
+| NiceOS NGINX Exporter | `docker.io/niceos/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b` | `ghcr.io/niceos-containers/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b` |
 
 ## Public catalog
 
