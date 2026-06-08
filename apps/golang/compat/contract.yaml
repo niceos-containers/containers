@@ -1,0 +1,104 @@
+schemaVersion: 1
+kind: NiceOSBitnamiCompatibilityContract
+
+app:
+  name: golang
+  displayName: NiceOS Golang
+  appVersion: "1.26.4"
+  image: docker.io/niceos/golang
+  immutableTag: 1.26.4-niceos13-r1
+  niceosContainer: "13"
+  imageRevision: 1
+
+positioning:
+  mode: bitnami-compatible-migration-target
+  officialBitnamiReplacement: false
+  reference: bitnami/golang/1.26/debian-12
+  description: >
+    NiceOS Golang is a NiceOS.Container-based, RPM/glibc-powered image
+    preserving the historical bitnami/golang command and workspace contract
+    while replacing Debian/minideb/apt/Stacksmith internals with NiceOS RPMs.
+
+dockerContract:
+  entrypoint: null
+  cmd:
+    - bash
+  user: root
+  workdir: /go
+  strictBitnamiGolangDockerConfig: true
+
+paths:
+  required:
+    - /go
+    - /go/src
+    - /go/bin
+    - /go/pkg
+    - /go/.cache
+    - /opt/bitnami/go
+    - /opt/bitnami/go/bin/go
+    - /opt/bitnami/go/bin/gofmt
+    - /bitnami/golang
+  optionalNiceOS:
+    - /etc/profile.d/00-bitnami-go-path.sh
+    - /etc/profile.d/10-go-env.sh
+    - /opt/bitnami/licenses/niceos-golang-LICENSE.txt
+
+environment:
+  required:
+    APP_VERSION: "1.26.4"
+    BITNAMI_APP_NAME: golang
+    GOCACHE: /go/.cache
+    GOMODCACHE: /go/pkg/mod
+    GOPATH: /go
+    GOROOT: /opt/bitnami/go
+    IMAGE_REVISION: "1"
+    OS_NAME: linux
+    OS_FLAVOUR: niceos-container-13
+  pathMustContain:
+    - /go/bin
+    - /opt/bitnami/go/bin
+
+buildCapabilities:
+  goRun: true
+  goBuild: true
+  goMod: true
+  goWork: true
+  cgo: true
+  cgoPthread: true
+  linuxApiHeaders: true
+  libgccLinkerName: true
+  gitForModules: true
+  curlForModules: true
+  caCertificates: true
+
+security:
+  defaultUserRootLikeBitnami: true
+  arbitraryUidSupportedWhenExplicit: true
+  readOnlyRootfsSupportedWithTmpfs: true
+  packageManagersInFinalImage: false
+  setuidSetgidFiles: false
+
+removedFromFinalImage:
+  - tdnf
+  - dnf
+  - yum
+  - rpm
+  - rpm2cpio
+  - repository metadata
+  - package manager caches
+  - man/info/doc payloads
+
+knownTemporaryWorkarounds:
+  - name: libgcc_s linker-name symlink
+    reason: >
+      Temporary Dockerfile workaround until NiceOS gcc/libgcc packaging provides
+      libgcc-devel with /usr/lib/libgcc_s.so -> libgcc_s.so.1.
+    removeWhen: libgcc-devel is available and required by go1.26/gcc RPMs.
+
+validation:
+  script: tests/bitnami-compat-max.sh
+  expectedLocal:
+    failed: 0
+  recommended:
+    - IMAGE=docker.io/niceos/golang:1.26.4-niceos13-r1 ./tests/bitnami-compat-max.sh
+    - IMAGE=docker.io/niceos/golang:1.26.4-niceos13-r1 RUN_NETWORK_TESTS=1 ./tests/bitnami-compat-max.sh

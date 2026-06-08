@@ -1,0 +1,35 @@
+schemaVersion: 1
+kind: niceos-application-container
+app: golang
+sourceOfTruth:
+  type: git
+  url: https://specs.niceos.ru/niceos-containers/app-golang
+  branch: main
+publicMonorepo:
+  type: git
+  url: https://github.com/niceos-containers/containers
+  path: apps/golang
+images:
+  dockerHub:
+    image: docker.io/niceos/golang
+    tags:
+      - 1.26.4-niceos13-r1
+      - "1.26.4"
+      - latest
+    digest: sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556
+  ghcr:
+    image: ghcr.io/niceos-containers/golang
+    tags:
+      - 1.26.4-niceos13-r1
+      - "1.26.4"
+      - latest
+    digest: sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556
+runtime:
+  niceosContainer: "13"
+  appVersion: "1.26.4"
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/golang/1.26/debian-12
+sync:
+  generatedBy: niceos_app_release.py
+  generatedAt: 2026-06-08T13:20:34Z

@@ -1,0 +1,15 @@
+services:
+  golang:
+    image: docker.io/niceos/golang:${NICEOS_GOLANG_TAG:-1.26.4-niceos13-r1}
+    tty: true
+    working_dir: /go
+    command: ["sleep", "infinity"]
+    environment:
+      GOPATH: /go
+      GOCACHE: /go/.cache
+      GOMODCACHE: /go/pkg/mod
+    volumes:
+      - golang-workspace:/go
+
+volumes:
+  golang-workspace:

@@ -1,0 +1,23 @@
+apps:
+  - name: golang
+    displayName: Golang
+    description: NiceOS.Container Golang image with Bitnami-compatible /go and /opt/bitnami/go layout.
+    category: language-runtime
+    image: docker.io/niceos/golang
+    ghcrImage: ghcr.io/niceos-containers/golang
+    latestImmutableTag: 1.26.4-niceos13-r1
+    appVersion: 1.26.4
+    niceosStream: "13"
+    imageRevision: 1
+    package: go1.26
+    compatibility:
+      target: bitnami/golang
+      officialReplacement: false
+      migrationTarget: true
+    source:
+      internal: https://specs.niceos.ru/niceos-containers/app-golang
+      public: https://github.com/niceos-containers/containers/tree/main/apps/golang
+    docs:
+      readme: README.md
+      contract: compat/contract.yaml
+      release: docs/releases/1.26.4-niceos13-r1.md

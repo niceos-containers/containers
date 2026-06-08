@@ -1,0 +1,29 @@
+schemaVersion: 1
+kind: NiceOSAppRelease
+app:
+  name: golang
+  displayName: NiceOS Golang
+  category: developer-tools
+mode: release
+release:
+  appVersion: "1.26.4"
+  niceosStream: "13"
+  imageRevision: 1
+  immutableTag: "1.26.4-niceos13-r1"
+images:
+  dockerHub:
+    repository: docker.io/niceos/golang
+    digest: sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556
+  ghcr:
+    repository: ghcr.io/niceos-containers/golang
+    digest: sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556
+source:
+  sourceOfTruth: https://specs.niceos.ru/niceos-containers/app-golang
+  publicMonorepo: https://github.com/niceos-containers/containers
+  publicPath: apps/golang
+compatibility:
+  mode: bitnami-compatible-migration-target
+  reference: bitnami/golang/1.26/debian-12
+generated:
+  tool: niceos_app_release.py
+  at: 2026-06-08T13:20:34Z

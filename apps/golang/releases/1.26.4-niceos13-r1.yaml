@@ -1,0 +1,44 @@
+apiVersion: niceos.io/v1alpha1
+kind: NiceOSContainerRelease
+metadata:
+  app: golang
+  tag: 1.26.4-niceos13-r1
+spec:
+  appVersion: 1.26.4
+  imageRevision: 1
+  niceosStream: "13"
+  rpm:
+    name: go1.26
+    expectedVersion: 1.26.4
+  images:
+    primary: docker.io/niceos/golang:1.26.4-niceos13-r1
+    aliases:
+      - docker.io/niceos/golang:1.26
+      - docker.io/niceos/golang:latest
+    mirrors:
+      - ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1
+  source:
+    internalRepo: https://specs.niceos.ru/niceos-containers/app-golang
+    publicMonorepo: https://github.com/niceos-containers/containers/tree/main/apps/golang
+    sourceTag: v1.26.4-niceos13-r1
+    monorepoTag: app-golang-1.26.4-niceos13-r1
+  compatibility:
+    target: bitnami/golang
+    officialReplacement: false
+    preservedPaths:
+      - /go
+      - /opt/bitnami/go
+      - /opt/bitnami/go/bin/go
+    preservedEnvironment:
+      - GOPATH=/go
+      - GOCACHE=/go/.cache
+      - GOMODCACHE=/go/pkg/mod
+      - BITNAMI_APP_NAME=golang
+  tests:
+    required:
+      - scripts/test.sh docker.io/niceos/golang:1.26.4-niceos13-r1
+  artifacts:
+    sbom: reports/sbom/golang-1.26.4-niceos13-r1.spdx.json
+    vulnerabilityReport: reports/security/golang-1.26.4-niceos13-r1.grype.json
+    buildLog: reports/build/golang-1.26.4-niceos13-r1.log
+    digest: reports/release/golang-1.26.4-niceos13-r1.digest

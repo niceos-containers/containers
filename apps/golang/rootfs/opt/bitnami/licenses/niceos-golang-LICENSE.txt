@@ -1,0 +1,11 @@
+NiceOS Golang Application Container
+SPDX-License-Identifier: Apache-2.0
+
+This container integration is provided by NiceSOFT/NiceOS.
+
+The Go toolchain, GCC, glibc and all included runtime components remain under
+their respective upstream open source licenses. This file documents the NiceOS
+container integration layer only.
+
+This image is not an official Bitnami, Broadcom, VMware or Go project image.
+It is a NiceOS.Container-based Bitnami-compatible migration target.
