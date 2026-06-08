@@ -352,6 +352,6 @@ ghcr.io/niceos-containers/nginx-exporter:latest
 
 Digests:
 
-- Docker Hub immutable digest: `docker.io/niceos/nginx-exporter@sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad`
-- GHCR immutable digest: `ghcr.io/niceos-containers/nginx-exporter@sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad`
+- Docker Hub immutable digest: `docker.io/niceos/nginx-exporter@sha256:6b5c5f52cae3acb4ada82dc1a3903fd36596dfa7e09d23425186a2f424809430`
+- GHCR immutable digest: `ghcr.io/niceos-containers/nginx-exporter@sha256:6b5c5f52cae3acb4ada82dc1a3903fd36596dfa7e09d23425186a2f424809430`
 <!-- niceos:app-nginx-exporter-registries:end -->

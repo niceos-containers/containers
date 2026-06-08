@@ -18,7 +18,7 @@ source:
   publicMonorepo: https://github.com/niceos-containers/containers
   publicPath: apps/nginx-exporter
   appSourceTag: v1.5.1-niceos13-r2
-  buildSourceCommit: a3624a1dcdf2d6cbfcc82c4b8fa193b5412e9822
+  buildSourceCommit: 4a5257f73d8fdad4952747bd33f9476709002c55
   metadataCommit: pending
 images:
   dockerHub:
@@ -27,7 +27,7 @@ images:
       immutable: 1.5.1-niceos13-r2
       version: "1.5.1"
       channel: latest
-    digest: sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad
+    digest: sha256:6b5c5f52cae3acb4ada82dc1a3903fd36596dfa7e09d23425186a2f424809430
     signed: false
   ghcr:
     repository: ghcr.io/niceos-containers/nginx-exporter
@@ -35,7 +35,7 @@ images:
       immutable: 1.5.1-niceos13-r2
       version: "1.5.1"
       channel: latest
-    digest: sha256:47c616989ca204f5d3e5b0c5d321b37be7d175368a8b7dfbb228fad9edcec5ad
+    digest: sha256:6b5c5f52cae3acb4ada82dc1a3903fd36596dfa7e09d23425186a2f424809430
     signed: false
 base:
   image: docker.io/niceos/niceos-container-base
@@ -79,4 +79,4 @@ docs:
 generated:
   tool: niceos_app_release.py
   app: nginx-exporter
-  at: 2026-06-08T21:42:31Z
+  at: 2026-06-08T22:08:50Z
