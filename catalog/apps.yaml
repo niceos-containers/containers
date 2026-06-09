@@ -1,5 +1,5 @@
 schemaVersion: 1
-generatedAt: 2026-06-09T12:01:01Z
+generatedAt: 2026-06-09T12:06:26Z
 apps:
   - name: git
     displayName: "NiceOS Git"
@@ -146,21 +146,21 @@ apps:
         immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: ""
+        digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
         signed: false
       ghcr:
         repository: ghcr.io/niceos-containers/nginx-exporter
         immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: ""
+        digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
         signed: false
       ecrPublic:
         repository: public.ecr.aws/t5j6z0j2/nginx-exporter
         immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: ""
+        digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
         signed: false
     niceosContainer: "13"
     appVersion: "1.5.1"

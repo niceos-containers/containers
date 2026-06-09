@@ -6,7 +6,7 @@ sourceOfTruth:
   url: https://specs.niceos.ru/niceos-containers/app-nginx-exporter
   branch: main
   tag: 
-  buildSourceCommit: ad58902d4e2e77fee0f73a867c27e0c2aa3675c0
+  buildSourceCommit: 27a5de30abf9ec02aaa68bfa6e271ff8aef48296
   metadataCommit: pending
 publicMonorepo:
   type: git
@@ -22,7 +22,7 @@ images:
       - 1.5.1-niceos13-r2
       - "1.5.1"
       - latest
-    digest: 
+    digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
     signed: false
   ghcr:
     registry: ghcr.io
@@ -33,7 +33,7 @@ images:
       - 1.5.1-niceos13-r2
       - "1.5.1"
       - latest
-    digest: 
+    digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
     signed: false
   ecrPublic:
     registry: public.ecr.aws
@@ -45,7 +45,7 @@ images:
       - 1.5.1-niceos13-r2
       - "1.5.1"
       - latest
-    digest: 
+    digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
     signed: false
 base:
   image: docker.io/niceos/niceos-container-base
@@ -60,4 +60,4 @@ compatibility:
 sync:
   mode: update
   generatedBy: niceos_app_release.py
-  generatedAt: 2026-06-09T12:01:01Z
+  generatedAt: 2026-06-09T12:06:26Z

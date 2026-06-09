@@ -360,5 +360,7 @@ public.ecr.aws/t5j6z0j2/nginx-exporter:latest
 
 Digests:
 
-- Digests are refreshed by release automation after image push.
+- Docker Hub immutable digest: `docker.io/niceos/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b`
+- GHCR immutable digest: `ghcr.io/niceos-containers/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b`
+- AWS ECR Public immutable digest: `public.ecr.aws/t5j6z0j2/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b`
 <!-- niceos:app-nginx-exporter-registries:end -->
