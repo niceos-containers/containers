@@ -6,12 +6,12 @@ NiceOS Application Containers are free, RPM-based, glibc-based application image
 
 ## Published images
 
-| App | Docker Hub | GHCR | Runtime | Compatibility reference |
-|---|---|---|---|---|
-| NiceOS Git | `docker.io/niceos/git:2.54.0-niceos13-r2` | `ghcr.io/niceos-containers/git:2.54.0-niceos13-r2` | Git 2.54.0 + Git LFS 3.7.1 | `bitnami/git/2/debian-12` |
-| NiceOS Golang | `docker.io/niceos/golang:1.26.4-niceos13-r1` | `ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1` | Golang 1.26.4 | `bitnami/golang/1.26/debian-12` |
-| NiceOS NGINX | `docker.io/niceos/nginx:1.31.1-niceos13-r1` | `ghcr.io/niceos-containers/nginx:1.31.1-niceos13-r1` | NGINX 1.31.1 + njs 0.9.9 + headers-more 0.39 | `bitnami/nginx/1.31/debian-12` |
-| NiceOS NGINX Exporter | `docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2` | `ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2` | Nginx Exporter 1.5.1 | `bitnami/nginx-exporter/1/debian-12` |
+| App | Docker Hub | GHCR | AWS ECR Public | Runtime | Compatibility reference |
+|---|---|---|---|---|---|
+| NiceOS Git | `docker.io/niceos/git:2.54.0-niceos13-r2` | `ghcr.io/niceos-containers/git:2.54.0-niceos13-r2` | `pending` | Git 2.54.0 + Git LFS 3.7.1 | `bitnami/git/2/debian-12` |
+| NiceOS Golang | `docker.io/niceos/golang:1.26.4-niceos13-r1` | `ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1` | `pending` | Golang 1.26.4 | `bitnami/golang/1.26/debian-12` |
+| NiceOS NGINX | `docker.io/niceos/nginx:1.31.1-niceos13-r1` | `ghcr.io/niceos-containers/nginx:1.31.1-niceos13-r1` | `pending` | NGINX 1.31.1 + njs 0.9.9 + headers-more 0.39 | `bitnami/nginx/1.31/debian-12` |
+| NiceOS NGINX Exporter | `docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2` | `ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2` | `public.ecr.aws/t5j6z0j2/nginx-exporter:1.5.1-niceos13-r2` | Nginx Exporter 1.5.1 | `bitnami/nginx-exporter/1/debian-12` |
 
 ## Quick start
 
@@ -22,6 +22,7 @@ For production, prefer immutable tags or digest-pinned references instead of `la
 ```console
 docker run --rm docker.io/niceos/git:2.54.0-niceos13-r2 git --version
 docker run --rm ghcr.io/niceos-containers/git:2.54.0-niceos13-r2 git --version
+
 ```
 
 ### NiceOS Golang
@@ -29,6 +30,7 @@ docker run --rm ghcr.io/niceos-containers/git:2.54.0-niceos13-r2 git --version
 ```console
 docker run --rm docker.io/niceos/golang:1.26.4-niceos13-r1 go version
 docker run --rm ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1 go version
+
 ```
 
 ### NiceOS NGINX
@@ -36,6 +38,7 @@ docker run --rm ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1 go version
 ```console
 docker run --rm docker.io/niceos/nginx:1.31.1-niceos13-r1 nginx -v
 docker run --rm ghcr.io/niceos-containers/nginx:1.31.1-niceos13-r1 nginx -v
+
 ```
 
 ### NiceOS NGINX Exporter
@@ -43,16 +46,17 @@ docker run --rm ghcr.io/niceos-containers/nginx:1.31.1-niceos13-r1 nginx -v
 ```console
 docker run --rm docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2 nginx-exporter --version
 docker run --rm ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2 nginx-exporter --version
+docker run --rm public.ecr.aws/t5j6z0j2/nginx-exporter:1.5.1-niceos13-r2 nginx-exporter --version
 ```
 
 ## Current image digests
 
-| App | Docker Hub digest | GHCR digest |
-|---|---|---|
-| NiceOS Git | `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` | `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` |
-| NiceOS Golang | `docker.io/niceos/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` | `ghcr.io/niceos-containers/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` |
-| NiceOS NGINX | `docker.io/niceos/nginx@sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f` | `ghcr.io/niceos-containers/nginx@sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f` |
-| NiceOS NGINX Exporter | `docker.io/niceos/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b` | `ghcr.io/niceos-containers/nginx-exporter@sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b` |
+| App | Docker Hub digest | GHCR digest | AWS ECR Public digest |
+|---|---|---|---|
+| NiceOS Git | `docker.io/niceos/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` | `ghcr.io/niceos-containers/git@sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d` | `pending` |
+| NiceOS Golang | `docker.io/niceos/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` | `ghcr.io/niceos-containers/golang@sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556` | `pending` |
+| NiceOS NGINX | `docker.io/niceos/nginx@sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f` | `ghcr.io/niceos-containers/nginx@sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f` | `pending` |
+| NiceOS NGINX Exporter | `docker.io/niceos/nginx-exporter@pending` | `ghcr.io/niceos-containers/nginx-exporter@pending` | `public.ecr.aws/t5j6z0j2/nginx-exporter@pending` |
 
 ## Public catalog
 
@@ -67,7 +71,7 @@ Currently published apps:
 - `git`: `docker.io/niceos/git:2.54.0-niceos13-r2` / `ghcr.io/niceos-containers/git:2.54.0-niceos13-r2`
 - `golang`: `docker.io/niceos/golang:1.26.4-niceos13-r1` / `ghcr.io/niceos-containers/golang:1.26.4-niceos13-r1`
 - `nginx`: `docker.io/niceos/nginx:1.31.1-niceos13-r1` / `ghcr.io/niceos-containers/nginx:1.31.1-niceos13-r1`
-- `nginx-exporter`: `docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2` / `ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2`
+- `nginx-exporter`: `docker.io/niceos/nginx-exporter:1.5.1-niceos13-r2` / `ghcr.io/niceos-containers/nginx-exporter:1.5.1-niceos13-r2` / `public.ecr.aws/t5j6z0j2/nginx-exporter:1.5.1-niceos13-r2`
 
 ## Monorepo release policy
 

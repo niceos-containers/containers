@@ -5,7 +5,7 @@ app:
   displayName: "NiceOS NGINX Exporter"
   sourcePath: apps/nginx-exporter
   category: monitoring
-mode: release
+mode: update
 release:
   appVersion: "1.5.1"
   niceosStream: "13"
@@ -17,8 +17,8 @@ source:
   sourceOfTruth: https://specs.niceos.ru/niceos-containers/app-nginx-exporter
   publicMonorepo: https://github.com/niceos-containers/containers
   publicPath: apps/nginx-exporter
-  appSourceTag: v1.5.1-niceos13-r2
-  buildSourceCommit: 2938ba16af02ff9c62e9f0ae915b1f46a6324b0a
+  appSourceTag: ""
+  buildSourceCommit: ad58902d4e2e77fee0f73a867c27e0c2aa3675c0
   metadataCommit: pending
 images:
   dockerHub:
@@ -27,7 +27,7 @@ images:
       immutable: 1.5.1-niceos13-r2
       version: "1.5.1"
       channel: latest
-    digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
+    digest: ""
     signed: false
   ghcr:
     repository: ghcr.io/niceos-containers/nginx-exporter
@@ -35,7 +35,18 @@ images:
       immutable: 1.5.1-niceos13-r2
       version: "1.5.1"
       channel: latest
-    digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
+    digest: ""
+    signed: false
+  ecrPublic:
+    repository: public.ecr.aws/t5j6z0j2/nginx-exporter
+    region: us-east-1
+    repositoryName: nginx-exporter
+    alias: t5j6z0j2
+    tags:
+      immutable: 1.5.1-niceos13-r2
+      version: "1.5.1"
+      channel: latest
+    digest: ""
     signed: false
 base:
   image: docker.io/niceos/niceos-container-base
@@ -79,4 +90,4 @@ docs:
 generated:
   tool: niceos_app_release.py
   app: nginx-exporter
-  at: 2026-06-08T22:18:27Z
+  at: 2026-06-09T12:01:01Z

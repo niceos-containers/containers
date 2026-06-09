@@ -82,3 +82,4 @@ tests:
 registries:
   dockerHub: docker.io/niceos/nginx-exporter
   ghcr: ghcr.io/niceos-containers/nginx-exporter
+  ecrPublic: public.ecr.aws/t5j6z0j2/nginx-exporter

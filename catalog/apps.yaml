@@ -1,5 +1,5 @@
 schemaVersion: 1
-generatedAt: 2026-06-08T22:18:27Z
+generatedAt: 2026-06-09T12:01:01Z
 apps:
   - name: git
     displayName: "NiceOS Git"
@@ -26,6 +26,13 @@ apps:
         channelTag: latest
         digest: sha256:612d39a6aa268a379e938bf7695d312b78ea7e522ead5779ce9ee5e0216fba0d
         signed: true
+      ecrPublic:
+        repository: ""
+        immutableTag: 2.54.0-niceos13-r2
+        versionTag: "2.54.0"
+        channelTag: latest
+        digest: ""
+        signed: false
     niceosContainer: "13"
     appVersion: "2.54.0"
     runtime: "Git 2.54.0 + Git LFS 3.7.1"
@@ -61,6 +68,13 @@ apps:
         versionTag: "1.26.4"
         channelTag: latest
         digest: sha256:716f8132ddb5cb919f24b9eb77859136e6d813adbf171e52bf17fe6f9ade4556
+        signed: false
+      ecrPublic:
+        repository: ""
+        immutableTag: 1.26.4-niceos13-r1
+        versionTag: "1.26.4"
+        channelTag: latest
+        digest: ""
         signed: false
     niceosContainer: "13"
     appVersion: "1.26.4"
@@ -98,6 +112,13 @@ apps:
         channelTag: latest
         digest: sha256:427debcf5802bbca860409681429a91ece24f91f35e0c11252ab67bd29f3358f
         signed: false
+      ecrPublic:
+        repository: ""
+        immutableTag: 1.31.1-niceos13-r1
+        versionTag: "1.31.1"
+        channelTag: latest
+        digest: ""
+        signed: false
     niceosContainer: "13"
     appVersion: "1.31.1"
     runtime: "NGINX 1.31.1 + njs 0.9.9 + headers-more 0.39"
@@ -125,14 +146,21 @@ apps:
         immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
+        digest: ""
         signed: false
       ghcr:
         repository: ghcr.io/niceos-containers/nginx-exporter
         immutableTag: 1.5.1-niceos13-r2
         versionTag: "1.5.1"
         channelTag: latest
-        digest: sha256:0b580957e45cafb12a7d55e4e2a11a5e12b357da1d0e5cdb2f79d27458a0612b
+        digest: ""
+        signed: false
+      ecrPublic:
+        repository: public.ecr.aws/t5j6z0j2/nginx-exporter
+        immutableTag: 1.5.1-niceos13-r2
+        versionTag: "1.5.1"
+        channelTag: latest
+        digest: ""
         signed: false
     niceosContainer: "13"
     appVersion: "1.5.1"
